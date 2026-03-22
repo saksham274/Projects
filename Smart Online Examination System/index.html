@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Exam Portal</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="start-page">
+
+<div class="start-card">
+
+<h1>Online CSE Exam Portal</h1>
+
+<p>Please read all instructions carefully before starting the exam.</p>
+
+<input type="text" id="name" placeholder="Enter your name">
+
+<div class="warning-box">
+
+<h3>⚠ Exam Instructions</h3>
+
+<ul>
+
+<li>Exam duration is <b>5 minutes</b>.</li>
+
+<li>The exam contains <b>10 multiple choice questions</b>.</li>
+
+<li>Each question carries <b>1 mark</b>.</li>
+
+<li>Do not refresh or reload the page during the exam.</li>
+
+<li>Do not switch tabs or open another browser window.</li>
+
+<li>If tab switching is detected, the exam will <b>automatically submit</b>.</li>
+
+<li>Do not minimize the browser window during the exam.</li>
+
+<li>Make sure you have a stable internet connection.</li>
+
+<li>Click <b>Submit Exam</b> before the timer ends.</li>
+
+<li>If the timer reaches zero, the exam will be <b>submitted automatically</b>.</li>
+
+</ul>
+
+</div>
+
+<div style="margin-top:15px">
+
+<input type="checkbox" id="agree">
+<label for="agree"> I have read and understood the instructions.</label>
+
+</div>
+
+<br>
+
+<button onclick="startExam()">Start Exam</button>
+
+</div>
+
+<script>
+
+function startExam(){
+
+let name = document.getElementById("name").value;
+let agree = document.getElementById("agree").checked;
+
+if(name==""){
+alert("Please enter your name before starting the exam.");
+return;
+}
+
+if(!agree){
+alert("Please read and accept the instructions.");
+return;
+}
+
+localStorage.setItem("student",name);
+
+window.location.href="exam.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
